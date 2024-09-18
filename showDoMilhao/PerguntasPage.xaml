@@ -43,8 +43,9 @@
                         </Frame>    
                    
             <Button x:Name="RespostA"
-                   Text="A-" 
-                   BackgroundColor="#77000000"
+                   Text="" 
+                   BackgroundColor="Black"
+                   Opacity=".4"
                    TextColor="White" 
                    Margin="5"
                    HorizontalOptions="FillAndExpand" 
@@ -53,8 +54,9 @@
                    Grid.ColumnSpan="3"/>
                    
             <Button x:Name="RespostB" 
-                   Text="B-" 
-                   BackgroundColor="#77000000"
+                   Text="" 
+                   BackgroundColor="Black"
+                   Opacity=".4"
                    TextColor="White"
                    Margin="5"
                    HorizontalOptions="FillAndExpand" 
@@ -63,8 +65,9 @@
                    Grid.ColumnSpan="3"/>
                    
             <Button x:Name="RespostC" 
-                   Text="C-" 
-                   BackgroundColor="#77000000"
+                   Text="" 
+                   BackgroundColor="Black"
+                   Opacity=".4"
                    TextColor="White"
                    Margin="5" 
                    HorizontalOptions="FillAndExpand" 
@@ -73,8 +76,9 @@
                    Grid.ColumnSpan="3"/>
                    
             <Button x:Name="RespostD" 
-                   Text="D-" 
-                   BackgroundColor="#77000000"
+                   Text="" 
+                   BackgroundColor="Black"
+                   Opacity=".4"
                    TextColor="White"
                    Margin="5" 
                    HorizontalOptions="FillAndExpand" 
@@ -83,8 +87,9 @@
                    Grid.ColumnSpan="3"/>
                    
             <Button x:Name="RespostE" 
-                   Text="E-" 
-                   BackgroundColor="#77000000"
+                   Text="" 
+                   BackgroundColor="Black"
+                   Opacity=".4"
                    TextColor="White"
                    Margin="5" 
                    HorizontalOptions="FillAndExpand" 
@@ -94,7 +99,8 @@
 
                    <Button x:Name="Ajuda1"
                    Text="" 
-                   BackgroundColor="#77000000"
+                   BackgroundColor="Black"
+                   Opacity=".4"
                    TextColor="White"
                    Margin="40,15,40,15" 
                    HorizontalOptions="FillAndExpand" 
@@ -104,7 +110,8 @@
 
                    <Button x:Name="Ajuda2"
                    Text="" 
-                   BackgroundColor="#77000000"
+                   BackgroundColor="Black"
+                   Opacity=".4"
                    TextColor="White"
                    Margin="40,15,40,15" 
                    HorizontalOptions="FillAndExpand" 
@@ -114,7 +121,8 @@
 
                    <Button x:Name="Ajuda3"
                    Text="" 
-                   BackgroundColor="#77000000"
+                   BackgroundColor="Black"
+                   Opacity=".4"
                    TextColor="White"
                    Margin="40,15,40,15"  
                    HorizontalOptions="FillAndExpand" 
