@@ -1,6 +1,6 @@
 namespace Controle
 {
-    public class Questione
+    public class Questao
     {
        public string Question;
 
@@ -16,7 +16,7 @@ namespace Controle
 
        public int respostacoreta =0;
 
-       public int QuestioneLevel;
+       public int QuestaoLevel;
 
        private Label labelPergunta;
 
@@ -31,12 +31,12 @@ namespace Controle
        private Button buttonResposta05;
 
 
-        public Questione()
+        public Questao()
         {
 
         }
        
-        public Questione(Label lp, Button BT01, Button BT02, Button BT03, Button BT04, Button BT05)
+        public Questao(Label lp, Button BT01, Button BT02, Button BT03, Button BT04, Button BT05)
                 {
                     labelPergunta = lp;
                     buttonResposta01 = BT01;
