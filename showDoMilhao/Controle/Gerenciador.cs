@@ -135,7 +135,10 @@ namespace Controle
             P10.FiveQuestion = "Agatha Christie";
             P10.respostacoreta = 2;
             ListaQuestoes.Add(P10);
-                }
+                    
+
+             ProximaQuestao();
+            }
 
         // Método para verificar se a resposta está correta
         public async void VerificarSeEstaCorreta(int RR)
@@ -148,7 +151,7 @@ namespace Controle
         }
 
         // Método para avançar para a próxima questão
-        private void ProximaQuestao()
+        public void ProximaQuestao()
         {
             var RandomNumber = Random.Shared.Next(0, ListaQuestoes.Count);
 

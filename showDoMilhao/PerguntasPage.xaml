@@ -5,124 +5,137 @@
              Shell.NavBarIsVisible="false"
              BackgroundColor="Black">
 
-    
-        <Grid>
-                <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="100"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                
-                    <Image
-                        x:Name="FundoImg" 
-                        Source="imgfundo.png"
-                        Opacity=".8"
-                        Aspect="Fill"
-                        VerticalOptions="FillAndExpand"
-                        HorizontalOptions="FillAndExpand"
-                        Grid.RowSpan="8"
-                        Grid.ColumnSpan="3"/>
+
+       <Grid>
+              <Grid.RowDefinitions>
+                     <RowDefinition Height="*"/>
+                     <RowDefinition Height="100"/>
+                     <RowDefinition Height="70"/>
+                     <RowDefinition Height="70"/>
+                     <RowDefinition Height="70"/>
+                     <RowDefinition Height="70"/>
+                     <RowDefinition Height="70"/>
+                     <RowDefinition Height="100"/>
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="*"/>
+                     <ColumnDefinition Width="*"/>
+                     <ColumnDefinition Width="*"/>
+              </Grid.ColumnDefinitions>
+
+              <Image
+                     x:Name="FundoImg"
+                     Source="imgfundo.png"
+                     Opacity=".8"
+                     Aspect="Fill"
+                     VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand"
+                     Grid.RowSpan="8"
+                     Grid.ColumnSpan="3"/>
 
 
-                        <Frame
-                            BackgroundColor="Black"
-                            Opacity=".4"
-                            Grid.Row="0"
-                            Grid.ColumnSpan="3"
-                            Margin="5">
-                        </Frame>    
-                   
-            <Button x:Name="RespostA"
-                   Text="A-" 
-                   BackgroundColor="#77000000"
-                   TextColor="White" 
-                   Margin="5"
-                   HorizontalOptions="FillAndExpand" 
-                   VerticalOptions="FillAndExpand" 
-                   Grid.Row="2"
-                   Grid.ColumnSpan="3"/>
-                   
-            <Button x:Name="RespostB" 
-                   Text="B-" 
-                   BackgroundColor="#77000000"
-                   TextColor="White"
-                   Margin="5"
-                   HorizontalOptions="FillAndExpand" 
-                   VerticalOptions="FillAndExpand" 
-                   Grid.Row="3"
-                   Grid.ColumnSpan="3"/>
-                   
-            <Button x:Name="RespostC" 
-                   Text="C-" 
-                   BackgroundColor="#77000000"
-                   TextColor="White"
-                   Margin="5" 
-                   HorizontalOptions="FillAndExpand" 
-                   VerticalOptions="FillAndExpand" 
-                   Grid.Row="4"
-                   Grid.ColumnSpan="3"/>
-                   
-            <Button x:Name="RespostD" 
-                   Text="D-" 
-                   BackgroundColor="#77000000"
-                   TextColor="White"
-                   Margin="5" 
-                   HorizontalOptions="FillAndExpand" 
-                   VerticalOptions="FillAndExpand"  
-                   Grid.Row="5"
-                   Grid.ColumnSpan="3"/>
-                   
-            <Button x:Name="RespostE" 
-                   Text="E-" 
-                   BackgroundColor="#77000000"
-                   TextColor="White"
-                   Margin="5" 
-                   HorizontalOptions="FillAndExpand" 
-                   VerticalOptions="FillAndExpand"  
-                   Grid.Row="6"
-                   Grid.ColumnSpan="3"/>
+              <Frame
+                     BackgroundColor="#77000000"
+                     Grid.Row="0"
+                     Grid.ColumnSpan="3"
+                     Margin="5">
 
-                   <Button x:Name="Ajuda1"
-                   Text="" 
-                   BackgroundColor="#77000000"
-                   TextColor="White"
-                   Margin="40,15,40,15" 
-                   HorizontalOptions="FillAndExpand" 
-                   VerticalOptions="FillAndExpand"  
-                   Grid.Row="7"
-                   Grid.Column="0"/>
+                     <Label
+                            x:Name="labelPergunta"
+                            Text="Teste "
+                            TextColor="White"
+                            FontSize="26"/>
+              </Frame>
 
-                   <Button x:Name="Ajuda2"
-                   Text="" 
-                   BackgroundColor="#77000000"
-                   TextColor="White"
-                   Margin="40,15,40,15" 
-                   HorizontalOptions="FillAndExpand" 
-                   VerticalOptions="FillAndExpand"  
-                   Grid.Row="7"
-                   Grid.Column="1"/>
+              <Button x:Name="buttonResposta01"
+                      Clicked="OnbuttonResposta01"
+                      Text="A-"
+                      BackgroundColor="#77000000"
+                      TextColor="White"
+                      Margin="5"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      Grid.Row="2"
+                      Grid.ColumnSpan="3"/>
 
-                   <Button x:Name="Ajuda3"
-                   Text="" 
-                   BackgroundColor="#77000000"
-                   TextColor="White"
-                   Margin="40,15,40,15"  
-                   HorizontalOptions="FillAndExpand" 
-                   VerticalOptions="FillAndExpand"  
-                   Grid.Row="7"
-                   Grid.Column="2"/>
-                   
-            
-        </Grid>
+              <Button x:Name="buttonResposta02"
+                      Clicked="OnbuttonResposta02"
+                      Text="B-"
+                      BackgroundColor="#77000000"
+                      TextColor="White"
+                      Margin="5"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      Grid.Row="3"
+                      Grid.ColumnSpan="3"/>
+
+              <Button x:Name="buttonResposta03"
+                      Clicked="OnbuttonResposta03"
+                      Text="C-"
+                      BackgroundColor="#77000000"
+                      TextColor="White"
+                      Margin="5"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      Grid.Row="4"
+                      Grid.ColumnSpan="3"/>
+
+              <Button x:Name="buttonResposta04"
+                      Clicked="OnbuttonResposta04"
+                      Text="D-"
+                      BackgroundColor="#77000000"
+                      TextColor="White"
+                      Margin="5"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      Grid.Row="5"
+                      Grid.ColumnSpan="3"/>
+
+              <Button x:Name="buttonResposta05"
+                      Clicked="OnbuttonResposta05"
+                      Text="E-"
+                      BackgroundColor="#77000000"
+                      TextColor="White"
+                      Margin="5"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      Grid.Row="6"
+                      Grid.ColumnSpan="3"/>
+
+              <Button x:Name="Ajuda1"
+                      Text="k"
+                      FontFamily="FontCard"
+                      Padding="0"
+                      FontSize=""
+                      BackgroundColor="#77000000"
+                      TextColor="White"
+                      Margin="40,15,40,15"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      Grid.Row="7"
+                      Grid.Column="0"/>
+
+              <Button x:Name="Ajuda2"
+                      Text=""
+                      BackgroundColor="#77000000"
+                      TextColor="White"
+                      Margin="40,15,40,15"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      Grid.Row="7"
+                      Grid.Column="1"/>
+
+              <Button x:Name="Ajuda3"
+                      Text=""
+                      BackgroundColor="#77000000"
+                      TextColor="White"
+                      Margin="40,15,40,15"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      Grid.Row="7"
+                      Grid.Column="2"/>
+
+
+       </Grid>
 
 </ContentPage>

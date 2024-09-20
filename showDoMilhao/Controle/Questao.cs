@@ -62,6 +62,17 @@ namespace Controle
                     buttonResposta03.Text = ThirdQuestion;
                     buttonResposta04.Text = FourthQuestion;
                     buttonResposta05.Text = FiveQuestion;
+
+                    buttonResposta01.BackgroundColor = Color.FromArgb("#77000000");
+                    buttonResposta01.TextColor       = Colors.White;
+                    buttonResposta02.BackgroundColor = Color.FromArgb("#77000000");
+                    buttonResposta02.TextColor       = Colors.White;
+                    buttonResposta03.BackgroundColor = Color.FromArgb("#77000000");
+                    buttonResposta03.TextColor       = Colors.White;
+                    buttonResposta04.BackgroundColor = Color.FromArgb("#77000000");
+                    buttonResposta04.TextColor       = Colors.White;
+                    buttonResposta05.BackgroundColor = Color.FromArgb("#77000000");
+                    buttonResposta05.TextColor       = Colors.White; 
                 }
        public bool VerificarSeEstaCorreta(int RR )
                 {
@@ -75,7 +86,8 @@ namespace Controle
                     {
                         var btnCorreto =  QualBTN(respostacoreta);
                         var btnIncorreto = QualBTN(RR);
-                        btnCorreto.BackgroundColor = Colors.Yellow;
+                        btnCorreto.BackgroundColor = Colors.BlueViolet;
+                       
                         btnIncorreto.BackgroundColor = Colors.Red;
                         return false;
                     }
