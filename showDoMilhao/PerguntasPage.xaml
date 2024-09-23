@@ -46,6 +46,16 @@
                             TextColor="White"
                             FontSize="26"/>
               </Frame>
+              
+                        <Label
+                            x:Name="Pontuacao"
+                            Text="Reais: 1000"
+                            Margin="10,20,0,0"
+                            FontFamily="Numbers"
+                            TextColor="White"
+                            FontSize="60"
+                            Grid.Row="1"
+                            Grid.ColumnSpan="3"/>
 
               <Button x:Name="buttonResposta01"
                       Clicked="OnbuttonResposta01"
@@ -105,8 +115,8 @@
               <Button x:Name="Ajuda1"
                       Text="k"
                       FontFamily="FontCard"
-                      Padding="0"
-                      FontSize=""
+                      Padding="-10"
+                      FontSize="60"
                       BackgroundColor="#77000000"
                       TextColor="White"
                       Margin="40,15,40,15"

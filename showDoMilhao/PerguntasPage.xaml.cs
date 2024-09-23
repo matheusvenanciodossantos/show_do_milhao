@@ -11,7 +11,6 @@ public partial class PerguntasPage : ContentPage
 	{
 		InitializeComponent();
 		gerenciador = new Gerenciador(labelPergunta, buttonResposta01, buttonResposta02, buttonResposta03, buttonResposta04, buttonResposta05);
-		gerenciador.ProximaQuestao();
 	}
 
 	void OnbuttonResposta01(object sender, EventArgs args)
