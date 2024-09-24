@@ -16,8 +16,8 @@ public static class MauiProgram
 				fonts.AddFont("RoyalFlush_Basic-Regular.ttf", "FontCard");
 				fonts.AddFont("Stoehr_Numbers.ttf ", "Number");
 				fonts.AddFont("GaelleNumber5.ttf", "Numbers");
-				//fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-				//fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+				fonts.AddFont("Technology-Bold.ttf", "LetraDeRelogio");
+				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
 #if DEBUG

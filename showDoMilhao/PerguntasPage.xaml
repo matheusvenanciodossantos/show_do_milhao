@@ -43,19 +43,29 @@
                      <Label
                             x:Name="labelPergunta"
                             Text="Teste "
+                            FontFamily="Times New Romance-Bold-Italic"
                             TextColor="White"
                             FontSize="26"/>
               </Frame>
               
                         <Label
-                            x:Name="Pontuacao"
-                            Text="Reais: 1000"
+                            x:Name="LpPontuacao"
+                            Text="R$ 0"
                             Margin="10,20,0,0"
-                            FontFamily="Numbers"
+                            FontFamily="LetraDeRelogio"
                             TextColor="White"
-                            FontSize="60"
+                            FontSize="30"
                             Grid.Row="1"
-                            Grid.ColumnSpan="3"/>
+                            Grid.ColumnSpan="2"/>
+                            
+                            <Label
+                            x:Name="LpNivelAtual"
+                            Text="Nivel:0"
+                            Margin="10,20,0,0"
+                            TextColor="White"
+                            FontSize="30"
+                            Grid.Row="1"
+                            Grid.Column="1"/>
 
               <Button x:Name="buttonResposta01"
                       Clicked="OnbuttonResposta01"

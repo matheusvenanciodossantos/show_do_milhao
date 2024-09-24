@@ -10,7 +10,7 @@ public partial class PerguntasPage : ContentPage
 	public PerguntasPage()
 	{
 		InitializeComponent();
-		gerenciador = new Gerenciador(labelPergunta, buttonResposta01, buttonResposta02, buttonResposta03, buttonResposta04, buttonResposta05);
+		gerenciador = new Gerenciador(labelPergunta, buttonResposta01, buttonResposta02, buttonResposta03, buttonResposta04, buttonResposta05, LpPontuacao, LpNivelAtual);
 	}
 
 	void OnbuttonResposta01(object sender, EventArgs args)

@@ -7,23 +7,31 @@ namespace Controle
         private List<Questao> ListaQuestoes = new List<Questao>();
         private HashSet<int> QuestoesRespondidas = new HashSet<int>();
         private Questao QuestaoCorrente;
+        private Label LabelPontuacao;
+        private Label LabelNivel;
 
-        public Gerenciador(Label lp, Button BT01, Button BT02, Button BT03, Button BT04, Button BT05)
+        public Gerenciador(Label lp, Button BT01, Button BT02, Button BT03, Button BT04, Button BT05, Label labelPontuacao, Label labelNivel)
         {
+             this.LabelPontuacao = LabelPontuacao;
+            this.LabelNivel = LabelNivel;
             CriaPerguntas(lp, BT01, BT02, BT03, BT04, BT05);
         }
 
         public int Pontuacao { get; private set; }
-        int NivelAtual = 1;
+        private int NivelAtual { get; set; } = 1;
 
-        void inicializar()
+        public void Inicializar()
         {
             Pontuacao = 0;
             NivelAtual = 1;
             ProximaQuestao();
+
+            QuestoesRespondidas.Clear();
+            LabelPontuacao.Text="R$ :"+Pontuacao.ToString();
+            LabelNivel.Text="Nível"+NivelAtual.ToString();
         }
 
-        void AdicionaPontuacao(int n)
+         void AdicionaPontuacao(int n)
         {
             if (n == 1)
                 Pontuacao = 1000;
@@ -46,11 +54,6 @@ namespace Controle
             else if (n == 10)
                 Pontuacao = 1000000;
         }
-
-
-
-
-
         private void CriaPerguntas(Label lp, Button BT01, Button BT02, Button BT03, Button BT04, Button BT05)
         {
             var P1 = new Questao();
@@ -1173,41 +1176,49 @@ namespace Controle
             ProximaQuestao();
         }
 
-        public async void VerificarSeEstaCorreta(int RR)
+        public async void VerificarSeEstaCorreta(int respostaSelecionada)
         {
-            if (QuestaoCorrente.VerificarSeEstaCorreta(RR))
+            if (QuestaoCorrente.VerificarSeEstaCorreta(respostaSelecionada))
             {
-                await Task.Delay(1000); // 1 segundo de espera
                 AdicionaPontuacao(NivelAtual);
-                NivelAtual++;
-                ProximaQuestao();
+                
+
+                await Task.Delay(1000); // 1 segundo de espera
+
+                if (NivelAtual >= 10)
+                {
+                     await App.Current.MainPage.DisplayAlert("Você ganhou!", "Parabéns! Você completou todos os níveis!", "OK");
+                     Inicializar(); // Reinicia o jogo
+                     LabelPontuacao.Text="R$ :"+Pontuacao.ToString();
+                     LabelNivel.Text="Nível"+NivelAtual.ToString();
+                }
+                else
+                {
+                    NivelAtual++;
+                    ProximaQuestao(); // Avança para a próxima pergunta
+                }
             }
             else
             {
                 await Task.Delay(2500);
                 await App.Current.MainPage.DisplayAlert("Você perdeu", "Game Over", "OK");
-                inicializar();
+                Inicializar(); // Reinicia o jogo
             }
         }
+
+        
 
         public void ProximaQuestao()
         {
-
-            var RandomNumber = Random.Shared.Next(0, ListaQuestoes.Count);
-
-            // Garante que a questão selecionada ainda não foi respondida
-            while (QuestoesRespondidas.Contains(RandomNumber))
+            int randomNumber;
+            do
             {
-                RandomNumber = Random.Shared.Next(0, ListaQuestoes.Count);
-            }
+                randomNumber = Random.Shared.Next(0, ListaQuestoes.Count);
+            } while (QuestoesRespondidas.Contains(randomNumber));
 
-            // Marca a questão como respondida
-            QuestoesRespondidas.Add(RandomNumber);
-
-            // Define a questão corrente e a desenha na tela
-            QuestaoCorrente = ListaQuestoes[RandomNumber];
+            QuestoesRespondidas.Add(randomNumber);
+            QuestaoCorrente = ListaQuestoes[randomNumber];
             QuestaoCorrente.Desenhar();
         }
-
     }
 }
