@@ -12,8 +12,8 @@ namespace Controle
 
         public Gerenciador(Label lp, Button BT01, Button BT02, Button BT03, Button BT04, Button BT05, Label labelPontuacao, Label labelNivel)
         {
-             this.LabelPontuacao = LabelPontuacao;
-            this.LabelNivel = LabelNivel;
+            this.LabelPontuacao = labelPontuacao;
+            this.LabelNivel = labelNivel;
             CriaPerguntas(lp, BT01, BT02, BT03, BT04, BT05);
         }
 
@@ -25,13 +25,13 @@ namespace Controle
             Pontuacao = 0;
             NivelAtual = 1;
             ProximaQuestao();
-
+            LabelPontuacao.Text = "R$ :" + Pontuacao.ToString();
+            LabelNivel.Text = "Nível " + NivelAtual.ToString();
             QuestoesRespondidas.Clear();
-            LabelPontuacao.Text="R$ :"+Pontuacao.ToString();
-            LabelNivel.Text="Nível"+NivelAtual.ToString();
         }
 
-         void AdicionaPontuacao(int n)
+        // Método AdicionaPontuacao
+        void AdicionaPontuacao(int n)
         {
             if (n == 1)
                 Pontuacao = 1000;
@@ -54,6 +54,7 @@ namespace Controle
             else if (n == 10)
                 Pontuacao = 1000000;
         }
+
         private void CriaPerguntas(Label lp, Button BT01, Button BT02, Button BT03, Button BT04, Button BT05)
         {
             var P1 = new Questao();
@@ -67,7 +68,7 @@ namespace Controle
             P1.respostaCorreta = 3;
             ListaQuestoes.Add(P1);
 
-            var P2 = new Questao();
+              var P2 = new Questao();
             P2.ConfigurarDesenho(lp, BT01, BT02, BT03, BT04, BT05);
             P2.Question = "Qual é o maior planeta do sistema solar?";
             P2.FirstQuestion = "Terra";
@@ -473,7 +474,7 @@ namespace Controle
             var P38 = new Questao();
             P38.ConfigurarDesenho(lp, BT01, BT02, BT03, BT04, BT05);
             P38.Question = "Qual é a capital da Rússia?";
-            P38.FirstQuestion = "Moscovo";
+            P38.FirstQuestion = "Moscou";
             P38.SecondQuestion = "São Petersburgo";
             P38.ThirdQuestion = "Kiev";
             P38.FourthQuestion = "Minsk";
@@ -1181,16 +1182,14 @@ namespace Controle
             if (QuestaoCorrente.VerificarSeEstaCorreta(respostaSelecionada))
             {
                 AdicionaPontuacao(NivelAtual);
-                
-
                 await Task.Delay(1000); // 1 segundo de espera
-
-                if (NivelAtual >= 10)
+                LabelPontuacao.Text = "R$ :" + Pontuacao.ToString();
+                LabelNivel.Text = "Nível " + NivelAtual.ToString();
+                
+                if (NivelAtual == 10)
                 {
-                     await App.Current.MainPage.DisplayAlert("Você ganhou!", "Parabéns! Você completou todos os níveis!", "OK");
-                     Inicializar(); // Reinicia o jogo
-                     LabelPontuacao.Text="R$ :"+Pontuacao.ToString();
-                     LabelNivel.Text="Nível"+NivelAtual.ToString();
+                    await App.Current.MainPage.DisplayAlert("Você venceu!", "Parabéns! Você ganhou o jogo!", "OK");
+                    Inicializar(); // Reinicia o jogo
                 }
                 else
                 {
@@ -1200,13 +1199,11 @@ namespace Controle
             }
             else
             {
-                await Task.Delay(2500);
+                await Task.Delay(2500); // Aguarda 2,5 segundos antes de exibir o alerta
                 await App.Current.MainPage.DisplayAlert("Você perdeu", "Game Over", "OK");
                 Inicializar(); // Reinicia o jogo
             }
         }
-
-        
 
         public void ProximaQuestao()
         {
