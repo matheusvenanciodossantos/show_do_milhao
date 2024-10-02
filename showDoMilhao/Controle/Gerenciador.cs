@@ -1188,6 +1188,7 @@ namespace Controle
                 
                 if (NivelAtual == 10)
                 {
+                    await Task.Delay(2500);// Aguarda 2,5 segundos antes de exibir o alerta
                     await App.Current.MainPage.DisplayAlert("Você venceu!", "Parabéns! Você ganhou o jogo!", "OK");
                     Inicializar(); // Reinicia o jogo
                 }

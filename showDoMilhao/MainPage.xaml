@@ -18,7 +18,7 @@
                      Text="Começar" 
                      Clicked="StarGame"
                      Opacity=".8"
-                     BackgroundColor="Black"
+                     BackgroundColor="Black"     
                      TextColor="White" 
                      Margin="17,0,17,50"
                      HorizontalOptions="FillAndExpand" 
