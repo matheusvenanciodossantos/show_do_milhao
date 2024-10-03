@@ -17,6 +17,11 @@ namespace Controle
             CriaPerguntas(lp, BT01, BT02, BT03, BT04, BT05);
         }
 
+        public Questao GetQuestaoCorrente()
+        {
+            return QuestaoCorrente;
+        } 
+
         public int Pontuacao { get; private set; }
         private int NivelAtual { get; set; } = 1;
 

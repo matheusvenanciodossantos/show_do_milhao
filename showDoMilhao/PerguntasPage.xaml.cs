@@ -33,6 +33,18 @@ public partial class PerguntasPage : ContentPage
 	{
 		gerenciador.VerificarSeEstaCorreta(5);
 	}
+	void OnButtonHelp(object S, EventArgs e)
+	{
+		var ajuda = new RetiraErrada();
+		ajuda.ConfigurarDesenho(buttonResposta01, buttonResposta02, buttonResposta03, buttonResposta04, buttonResposta05);
+		ajuda.RealizaAjuda(gerenciador.GetQuestaoCorrente());
+		(S as Button).IsVisible=false;
+	}
+	void OnButtonHelp2(object S, EventArgs e)
+	{
+		gerenciador.ProximaQuestao();
+		(S as Button).IsVisible=false;
+	}
 }
 
 

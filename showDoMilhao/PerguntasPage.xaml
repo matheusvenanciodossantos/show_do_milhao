@@ -124,6 +124,7 @@
 
               <Button x:Name="Ajuda1"
                       Text="k"
+                      Clicked="OnButtonHelp"
                       FontFamily="FontCard"
                       Padding="-10"
                       FontSize="60"
@@ -136,7 +137,10 @@
                       Grid.Column="0"/>
 
               <Button x:Name="Ajuda2"
-                      Text=""
+                      Text="K"
+                      FontFamily="Animal"
+                      FontSize="60"
+                      Clicked="OnButtonHelp2"
                       BackgroundColor="#77000000"
                       TextColor="White"
                       Margin="40,15,40,15"

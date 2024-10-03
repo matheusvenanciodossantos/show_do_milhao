@@ -18,6 +18,7 @@ public static class MauiProgram
 				fonts.AddFont("GaelleNumber5.ttf", "Numbers");
 				fonts.AddFont("Technology-Bold.ttf", "LetraDeRelogio");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+				fonts.AddFont("anim____.ttf", "Animal");
 			});
 
 #if DEBUG
