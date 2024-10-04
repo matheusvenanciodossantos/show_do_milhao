@@ -12,13 +12,14 @@ public static class MauiProgram
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 				fonts.AddFont("RoyalFlush_Basic-Regular.ttf", "FontCard");
 				fonts.AddFont("Stoehr_Numbers.ttf ", "Number");
 				fonts.AddFont("GaelleNumber5.ttf", "Numbers");
 				fonts.AddFont("Technology-Bold.ttf", "LetraDeRelogio");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+				fonts.AddFont("Personality.ttf", "person");
 				fonts.AddFont("anim____.ttf", "Animal");
+				fonts.AddFont("Profile", "Pessoa");
 			});
 
 #if DEBUG

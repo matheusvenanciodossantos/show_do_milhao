@@ -150,7 +150,10 @@
                       Grid.Column="1"/>
 
               <Button x:Name="Ajuda3"
-                      Text=""
+                      Text="T"
+                      Clicked="OnButtonHelp3"
+                      FontSize="60"
+                      FontFamily="Animal"
                       BackgroundColor="#77000000"
                       TextColor="White"
                       Margin="40,15,40,15"

@@ -27,12 +27,14 @@ namespace Controle
 
         public void Inicializar()
         {
+            App.Current.MainPage = new MainPage();
             Pontuacao = 0;
             NivelAtual = 1;
             ProximaQuestao();
             LabelPontuacao.Text = "R$ :" + Pontuacao.ToString();
             LabelNivel.Text = "Nível " + NivelAtual.ToString();
             QuestoesRespondidas.Clear();
+
         }
 
         // Método AdicionaPontuacao
@@ -1195,7 +1197,8 @@ namespace Controle
                 {
                     await Task.Delay(2500);// Aguarda 2,5 segundos antes de exibir o alerta
                     await App.Current.MainPage.DisplayAlert("Você venceu!", "Parabéns! Você ganhou o jogo!", "OK");
-                    Inicializar(); // Reinicia o jogo
+                    Inicializar();
+                     // Reinicia o jogo
                 }
                 else
                 {
@@ -1205,9 +1208,11 @@ namespace Controle
             }
             else
             {
+                
                 await Task.Delay(2500); // Aguarda 2,5 segundos antes de exibir o alerta
                 await App.Current.MainPage.DisplayAlert("Você perdeu", "Game Over", "OK");
                 Inicializar(); // Reinicia o jogo
+
             }
         }
 

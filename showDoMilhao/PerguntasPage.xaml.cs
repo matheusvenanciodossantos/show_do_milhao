@@ -45,6 +45,14 @@ public partial class PerguntasPage : ContentPage
 		gerenciador.ProximaQuestao();
 		(S as Button).IsVisible=false;
 	}
+
+	void OnButtonHelp3(object S, EventArgs e)
+	{
+		var ajuda = new Universitarios();
+		ajuda.ConfigurarDesenho(buttonResposta01, buttonResposta02, buttonResposta03, buttonResposta04, buttonResposta05);
+		ajuda.RealizaAjuda(gerenciador.GetQuestaoCorrente());
+		(S as Button).IsVisible=false;
+	}
 }
 
 
