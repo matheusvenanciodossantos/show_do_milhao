@@ -137,9 +137,8 @@
                       Grid.Column="0"/>
 
               <Button x:Name="Ajuda2"
-                      Text="K"
-                      FontFamily="Animal"
-                      FontSize="60"
+                      Text="Pular 3x"
+                      FontSize="24"
                       Clicked="OnButtonHelp2"
                       BackgroundColor="#77000000"
                       TextColor="White"

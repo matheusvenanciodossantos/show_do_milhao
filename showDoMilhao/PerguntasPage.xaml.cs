@@ -5,6 +5,7 @@ namespace showDoMilhao;
 
 public partial class PerguntasPage : ContentPage
 {
+	int pular = 0;
 	public Gerenciador gerenciador;
 
 	public PerguntasPage()
@@ -42,9 +43,32 @@ public partial class PerguntasPage : ContentPage
 	}
 	void OnButtonHelp2(object S, EventArgs e)
 	{
-		gerenciador.ProximaQuestao();
-		(S as Button).IsVisible=false;
-	}
+		pular++;
+			
+			if (pular == 3)
+			{gerenciador.ProximaQuestao();
+			(S as Button).IsVisible=false;
+			}
+
+			else
+			{
+				gerenciador.ProximaQuestao();
+			}
+
+			if (pular == 0)
+			{ 
+				Ajuda2.Text = "Pular 3x";
+			}
+			if (pular == 1)
+			{ 
+				Ajuda2.Text = "Pular 2x";
+			}
+			if (pular == 2)
+			{ 
+				Ajuda2.Text = "Pular 1x";
+			}
+
+	} 
 
 	void OnButtonHelp3(object S, EventArgs e)
 	{
